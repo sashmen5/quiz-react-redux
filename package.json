@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@codedojo/mdc-react": "^0.7.15",
+    "@codedojo/mdc-react": "0.7.6",
+    "express": "^4.16.4",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.2"

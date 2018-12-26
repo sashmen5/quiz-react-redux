@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import './index.css'
 import {
 	Layout,
@@ -13,7 +14,15 @@ import {
 	Radio
 } from "@codedojo/mdc-react";
 
+// 01:05 time
+
+import * as actions from '../store/actions';
+import {bindActionCreators} from "redux";
+
 class App extends Component {
+	componentDidMount() {
+		this.props.actions.getQuestions();
+	}
 
 	render() {
 		return (
@@ -61,4 +70,12 @@ class App extends Component {
 }
 
 
-export default App;
+export default connect(
+	state => ({
+		questions: state.questions
+	}),
+
+	dispatch => ({
+		actions: bindActionCreators(actions, dispatch)
+	})
+)(App);

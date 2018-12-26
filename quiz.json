@@ -1,0 +1,62 @@
+[
+  {
+    "text": "What is the correct syntax for creating an object instance:",
+    "options": [
+      "`new { x = 1, y = 2}`",
+      "`{ x: 1, y: 2}`",
+      "`{ x = 1, y = 2}`",
+      "`new { x: 1, y: 2}`"
+    ],
+    "answer": 1,
+    "area:": "objects",
+    "level": "beginner"
+  },
+  {
+    "text": "1 What is the correct syntax for creating an object instance:",
+    "options": [
+      "`new { x = 1, y = 2}`",
+      "`{ x: 1, y: 2}`",
+      "`{ x = 1, y = 2}`",
+      "`new { x: 1, y: 2}`"
+    ],
+    "answer": 1,
+    "area:": "objects",
+    "level": "beginner"
+  },
+  {
+    "text": "2 What is the correct syntax for creating an object instance:",
+    "options": [
+      "`new { x = 1, y = 2}`",
+      "`{ x: 1, y: 2}`",
+      "`{ x = 1, y = 2}`",
+      "`new { x: 1, y: 2}`"
+    ],
+    "answer": 1,
+    "area:": "objects",
+    "level": "beginner"
+  },
+  {
+    "text": "3 What is the correct syntax for creating an object instance:",
+    "options": [
+      "`new { x = 1, y = 2}`",
+      "`{ x: 1, y: 2}`",
+      "`{ x = 1, y = 2}`",
+      "`new { x: 1, y: 2}`"
+    ],
+    "answer": 1,
+    "area:": "objects",
+    "level": "beginner"
+  },
+  {
+    "text": "4 What is the correct syntax for creating an object instance:",
+    "options": [
+      "`new { x = 1, y = 2}`",
+      "`{ x: 1, y: 2}`",
+      "`{ x = 1, y = 2}`",
+      "`new { x: 1, y: 2}`"
+    ],
+    "answer": 1,
+    "area:": "objects",
+    "level": "beginner"
+  }
+]

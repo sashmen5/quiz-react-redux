@@ -1,18 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Markdown from 'markdown-it';
 import './index.css'
 import {
 	Layout,
-	Card,
-	CardHeader,
-	CardSection,
-	LinearProgress,
-	Typography,
-	List,
-	ListItem,
-	ListItemGraphic,
-	Radio,
 	Spinner
 } from "@codedojo/mdc-react";
 
@@ -20,8 +10,9 @@ import {
 
 import * as actions from '../store/actions';
 import {bindActionCreators} from "redux";
+import Quiz from "./Quiz";
 
-const markdown = new Markdown({html: true});
+
 
 class App extends Component {
 	componentDidMount() {
@@ -41,31 +32,15 @@ class App extends Component {
 			return <Spinner/>
 		}
 
+// TODO: refactor and remove props of quiz to Quiz component
 		return (
 			<Layout element="main">
-				<Card>
-					<CardHeader
-						title="Test knowledge JavaSript"
-						subtitle={`Question ${questionPosition} of ${numberOfQuestions}`}>
-					</CardHeader>
-					<LinearProgress value={quizProgress}/>
-
-					<CardSection primary>
-						<Typography dangerouslySetInnerHTML={{__html: markdown.render(question.text)}}>{}</Typography>
-						<List>
-							{
-								question.options.map((option, index) =>
-									<ListItem key={index}>
-										<ListItemGraphic>
-											<Radio/>
-										</ListItemGraphic>
-										<Typography dangerouslySetInnerHTML={{__html: markdown.render(option)}}>{}</Typography>
-									</ListItem>
-								)
-							}
-						</List>
-					</CardSection>
-				</Card>
+				<Quiz
+					question={question}
+					numberOfQuestions={numberOfQuestions}
+					questionPosition={questionPosition}
+					progress={quizProgress}
+				/>
 			</Layout>
 		);
 	}

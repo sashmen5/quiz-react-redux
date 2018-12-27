@@ -6,7 +6,7 @@ import {
 	Spinner
 } from "@codedojo/mdc-react";
 
-// 01:05 time
+// 01:30 time
 
 import * as actions from '../store/actions';
 import {bindActionCreators} from "redux";
@@ -25,7 +25,8 @@ class App extends Component {
 			numberOfQuestions,
 			questionPosition,
 			hasNextQuestion,
-			quizProgress
+			quizProgress,
+			actions
 		} = this.props;
 
 		if (!question) {
@@ -40,6 +41,7 @@ class App extends Component {
 					numberOfQuestions={numberOfQuestions}
 					questionPosition={questionPosition}
 					progress={quizProgress}
+					onAnswer={actions.commitAnswer}
 				/>
 			</Layout>
 		);

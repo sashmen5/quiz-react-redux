@@ -5,7 +5,8 @@ export default function reducer(state, action) {
 		case actions.GET_QUESTIONS:
 			return {
 				...state,
-				questions: action.questions
+				questions: action.questions,
+				loading: false
 			};
 
 		case actions.COMMIT_ANSWER:

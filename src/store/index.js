@@ -6,7 +6,8 @@ import reducer from "./reducer";
 const state = {
 	questions: [],
 	currentQuestionIndex: 0,
-	answers: []
+	answers: [],
+	loading: true
 };
 
 

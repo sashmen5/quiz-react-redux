@@ -14,7 +14,7 @@ import markdown from '../../markdown';
 export default function QuizQuestion({question, answer, onAnswer}) {
 	return (
 		<CardSection primary>
-			<Typography dangerouslySetInnerHTML={{__html: markdown.render(question.text)}}>{}</Typography>
+			<Typography dangerouslySetInnerHTML={{__html: markdown.render(question.text)}}/>
 			<List>
 				{
 					question.options.map((option, index) =>
@@ -28,7 +28,7 @@ export default function QuizQuestion({question, answer, onAnswer}) {
 									checked={answer === index}
 								/>
 							</ListItemGraphic>
-							<Typography dangerouslySetInnerHTML={{__html: markdown.render(option)}}>{}</Typography>
+							<Typography dangerouslySetInnerHTML={{__html: markdown.render(option)}}/>
 						</ListItem>
 					)
 				}

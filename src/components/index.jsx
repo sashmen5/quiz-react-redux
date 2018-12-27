@@ -21,6 +21,7 @@ class App extends Component {
 
 	render() {
 		const {
+			loading,
 			question,
 			numberOfQuestions,
 			questionPosition,
@@ -29,7 +30,7 @@ class App extends Component {
 			actions
 		} = this.props;
 
-		if (!question) {
+		if (loading) {
 			return <Spinner/>
 		}
 
@@ -58,6 +59,7 @@ export default connect(
 		const quizProgress = state.currentQuestionIndex / numberOfQuestions * 100;
 
 		return {
+			loading: state.loading,
 			question: question,
 			numberOfQuestions,
 			questionPosition,

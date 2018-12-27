@@ -25,12 +25,18 @@ export default class Quiz extends Component {
 		this.props.onAnswer(this.state.answer);
 	};
 
+	handleCompleteButtonClick = () => {
+		this.setState({answer: undefined});
+		this.props.onComplete();
+	};
+
 	render() {
 		const {
 			question,
 			questionPosition,
 			numberOfQuestions,
 			progress,
+			hasNextQuestion
 		} = this.props;
 
 		const {answer} = this.state;
@@ -39,21 +45,32 @@ export default class Quiz extends Component {
 			<Card>
 				<CardHeader
 					title="Test knowledge JavaSript"
-					subtitle={`Question ${questionPosition} of ${numberOfQuestions}`}>
+					subtitle={hasNextQuestion && `Question ${questionPosition} of ${numberOfQuestions}`}>
 				</CardHeader>
+
 				<LinearProgress value={progress}/>
-				<QuizQuestion
-					question={question}
-					answer={answer}
-					onAnswer={this.handleAnswer}
-				/>
+
+				{
+					question &&
+					<QuizQuestion
+						question={question}
+						answer={answer}
+						onAnswer={this.handleAnswer}
+					/>
+				}
+
 				<CardActions>
 					<CardAction>
-						<Button onClick={this.handleNexButtonClick}>Next</Button>
+						{hasNextQuestion ?
+							<Button onClick={this.handleNexButtonClick}>Next</Button>
+							:
+							<Button onClick={this.handleCompleteButtonClick}>Complete</Button>
+						}
 					</CardAction>
 				</CardActions>
 			</Card>
 		)
 	}
-
 }
+
+//TODO: make button disabled

@@ -6,11 +6,12 @@ import {
 	Spinner
 } from "@codedojo/mdc-react";
 
-// 01:30 time
+// 01:40 time
 
 import * as actions from '../store/actions';
 import {bindActionCreators} from "redux";
 import Quiz from "./Quiz";
+import QuizResults from "./QuizResults";
 
 
 
@@ -18,6 +19,15 @@ class App extends Component {
 	componentDidMount() {
 		this.props.actions.getQuestions();
 	}
+
+	handleComplete = () => {
+		this.props.actions.endQuiz();
+		this.props.actions.getResults(this.props.answers);
+	};
+
+	handleAnswer = answer => {
+		this.props.actions.commitAnswer(answer)
+	};
 
 	render() {
 		const {
@@ -27,7 +37,7 @@ class App extends Component {
 			questionPosition,
 			hasNextQuestion,
 			quizProgress,
-			actions
+			results
 		} = this.props;
 
 		if (loading) {
@@ -37,13 +47,23 @@ class App extends Component {
 // TODO: refactor and remove props of quiz to Quiz component
 		return (
 			<Layout element="main">
-				<Quiz
-					question={question}
-					numberOfQuestions={numberOfQuestions}
-					questionPosition={questionPosition}
-					progress={quizProgress}
-					onAnswer={actions.commitAnswer}
-				/>
+				{
+					results ?
+						<QuizResults
+							results={{correct: 5, total: 10}}
+						/>
+						:
+						<Quiz
+							question={question}
+							numberOfQuestions={numberOfQuestions}
+							questionPosition={questionPosition}
+							progress={quizProgress}
+							onAnswer={this.handleAnswer}
+							hasNextQuestion={hasNextQuestion}
+							onComplete={this.handleComplete}
+						/>
+				}
+
 			</Layout>
 		);
 	}
@@ -59,7 +79,10 @@ export default connect(
 		const quizProgress = state.currentQuestionIndex / numberOfQuestions * 100;
 
 		return {
+
+			answers: state.answers,
 			loading: state.loading,
+			results: state.results,
 			question: question,
 			numberOfQuestions,
 			questionPosition,

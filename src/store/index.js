@@ -7,7 +7,8 @@ const state = {
 	questions: [],
 	currentQuestionIndex: 0,
 	answers: [],
-	loading: true
+	loading: true,
+	results: null
 };
 
 

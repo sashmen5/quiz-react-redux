@@ -1,7 +1,11 @@
 const express = require('express');
+var cors = require('cors')
 const quiz = require('./quiz.json');
 
 const server = express();
+
+server.use((cors()));
+
 server.get('/api/quiz', (req, res) => {
 	res.json({ok: true, quiz});
 });

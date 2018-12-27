@@ -5,7 +5,9 @@
   "dependencies": {
     "@codedojo/mdc-react": "0.7.6",
     "axios": "^0.18.0",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
+    "markdown-it": "^8.4.2",
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.9",
     "react": "^16.7.0",
@@ -31,6 +33,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "proxy": "http://localhost:3000"
+  ]
 }

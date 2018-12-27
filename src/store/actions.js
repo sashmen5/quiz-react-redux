@@ -7,5 +7,5 @@ export function getQuestions() {
 		.then(data => ({
 			type: GET_QUESTIONS,
 			questions: data.quiz
-		}));
+		})).catch(err => console.log(err));
 }

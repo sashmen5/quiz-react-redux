@@ -4,6 +4,10 @@ export const GET_RESULTS = 'GET_RESULTS';
 export const COMMIT_ANSWER = 'COMMIT_ANSWER';
 export const END_QUIZ = 'END_QUIZ';
 
+export const GET_QUIZZES = 'GET_QUIZZES';
+export const GET_QUIZ = 'GET_QUIZ';
+export const UNSET_QUIZ = 'UNSET_QUIZ';
+
 export function getQuestions() {
 	return Axios.get('http://localhost:3000/api/quiz')
 		.then(response => response.data)
@@ -33,5 +37,28 @@ export function getResults(answers) {
 export function endQuiz() {
 	return {
 		type: END_QUIZ
+	}
+}
+
+export function getQuizzes() {
+	// TODO: implement async fetching from server of list of quizzes
+	return {
+		type: GET_QUIZZES,
+		payload: []
+	}
+}
+
+
+export function getQuiz(name) {
+	// TODO: implement async fetching from server of list of quizzes
+	return {
+		type: GET_QUIZ,
+		payload: 'quizz'
+	}
+}
+
+export function unsetQuiz() {
+	return {
+		type: UNSET_QUIZ
 	}
 }

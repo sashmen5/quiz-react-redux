@@ -6,7 +6,6 @@ import {
 	Spinner
 } from "@codedojo/mdc-react";
 
-// 01:40 time
 
 import * as actions from '../store/actions';
 import {bindActionCreators} from "redux";
@@ -79,7 +78,6 @@ export default connect(
 		const quizProgress = state.currentQuestionIndex / numberOfQuestions * 100;
 
 		return {
-
 			answers: state.answers,
 			loading: state.loading,
 			results: state.results,

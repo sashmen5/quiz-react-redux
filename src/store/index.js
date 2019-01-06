@@ -2,13 +2,18 @@ import {applyMiddleware, createStore} from 'redux';
 import promise from 'redux-promise';
 import logger from 'redux-logger';
 import reducer from "./reducer";
-
+//TODO: separate to several reducers
 const state = {
 	questions: [],
 	currentQuestionIndex: 0,
 	answers: [],
 	loading: true,
-	results: null
+	results: null,
+	quizzes: [],
+	singleQuiz: {
+		currentQuistionIndex: 0,
+		answers: []
+	}
 };
 
 

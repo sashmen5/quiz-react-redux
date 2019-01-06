@@ -16,18 +16,34 @@ export default function reducer(state, action) {
 				currentQuestionIndex: state.currentQuestionIndex + 1
 			};
 
-		case actions.END_QUIZ: {
+		case actions.END_QUIZ:
 			return {
 				...state,
 				loading: true
-			}
-		};
+			};
 
 		case actions.GET_RESULTS:
 			return {
 				...state,
 				loading: false,
 				results: action.results
+			};
+
+		case actions.GET_QUIZZES:
+			return {
+				...state,
+				quizzesList: action.payload
+			};
+		case actions.GET_QUIZ:
+			return {
+				...state,
+				singleQuiz: action.payload
+			};
+
+		case actions.UNSET_QUIZ:
+			return {
+				...state,
+				singleQuiz: undefined
 			};
 		default:
 			return state;

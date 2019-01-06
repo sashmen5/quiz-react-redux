@@ -11,6 +11,7 @@ const state = {
 	results: null,
 	quizzes: [],
 	singleQuiz: {
+		loading: true,
 		currentQuistionIndex: 0,
 		answers: []
 	}

@@ -49,7 +49,7 @@ class App extends Component {
 				{
 					results ?
 						<QuizResults
-							results={{correct: 5, total: 10}}
+							results={results}
 						/>
 						:
 						<Quiz

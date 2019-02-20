@@ -8,55 +8,54 @@
       "`new { x: 1, y: 2}`"
     ],
     "answer": 1,
-    "area:": "objects",
+    "area": "objects",
     "level": "beginner"
   },
   {
-    "text": "1 What is the correct syntax for creating an object instance:",
+    "text": "Which of the following will create a copy of an array such that changes to the old array will not be reflected in the new array?",
     "options": [
-      "`new { x = 1, y = 2}`",
-      "`{ x: 1, y: 2}`",
-      "`{ x = 1, y = 2}`",
-      "`new { x: 1, y: 2}`"
+      "`var newArray = oldArray;`",
+      "`var newArray = oldArray.slice();`",
+      "`var newArray = [oldArray];`",
+      "`var newArray = new Array(oldArray);`"
     ],
     "answer": 1,
-    "area:": "objects",
-    "level": "beginner"
+    "area": "arrays",
+    "level": "intermediate"
   },
   {
-    "text": "2 What is the correct syntax for creating an object instance:",
+    "text": "How do you accomplish function overloading behavior in Javascript?",
     "options": [
-      "`new { x = 1, y = 2}`",
-      "`{ x: 1, y: 2}`",
-      "`{ x = 1, y = 2}`",
-      "`new { x: 1, y: 2}`"
+      "You inspect the `arguments` object to determine what parameters were passed in.",
+      "You can accept an array or object as a single parameter.",
+      "You can define a function more than once with different parameters."
     ],
-    "answer": 1,
-    "area:": "objects",
-    "level": "beginner"
+    "answer": 0,
+    "area": "functions",
+    "level": "advanced"
   },
   {
-    "text": "3 What is the correct syntax for creating an object instance:",
+    "text": "Which of the following is a method of a `RegExp` object?",
     "options": [
-      "`new { x = 1, y = 2}`",
-      "`{ x: 1, y: 2}`",
-      "`{ x = 1, y = 2}`",
-      "`new { x: 1, y: 2}`"
+      "`ignoreCase`",
+      "`makeMultiline()`",
+      "`eval()`",
+      "`exec()`"
     ],
-    "answer": 1,
-    "area:": "objects",
-    "level": "beginner"
+    "answer": 3,
+    "area": "regex",
+    "level": "advanced"
   },
   {
-    "text": "4 What is the correct syntax for creating an object instance:",
+    "text": "What does JSONP stand for?",
     "options": [
-      "`new { x = 1, y = 2}`",
-      "`{ x: 1, y: 2}`",
-      "`{ x = 1, y = 2}`",
-      "`new { x: 1, y: 2}`"
+      "JavaScript Object Notation Parser",
+      "JavaScript Object Notation Predicate",
+      "JavaScript Object Notation with Padding",
+      "JavaScript Object Notation Protocol"
     ],
-    "answer": 1,
-    "area:": "objects",
-    "level": "beginner"
+    "answer": 2,
+    "area": "ajax",
+    "level": "advanced"
   }
 ]
